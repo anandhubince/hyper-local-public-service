@@ -1,0 +1,190 @@
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f4f1e8;
+            font-family: 'Georgia', 'Times New Roman', serif;
+            padding: 20px;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 2px,
+                    rgba(0,0,0,.03) 2px,
+                    rgba(0,0,0,.03) 4px
+                );
+        }
+
+        .newspaper-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 0 30px rgba(0,0,0,0.2);
+            border: 1px solid #333;
+        }
+
+        .newspaper-header {
+            background: #1a1a1a;
+            padding: 20px;
+            border-bottom: 4px double #000;
+        }
+
+        .masthead {
+            text-align: center;
+            border-bottom: 2px solid #666;
+            padding-bottom: 15px;
+            margin-bottom: 10px;
+        }
+
+        .masthead h1 {
+            font-family: 'Playfair Display', 'Georgia', serif;
+            font-size: 3.5em;
+            letter-spacing: 2px;
+            color: #f4f1e8;
+            text-shadow: 2px 2px 0px rgba(0,0,0,0.3);
+            font-weight: bold;
+            font-style: italic;
+        }
+
+        .tagline {
+            font-size: 0.9em;
+            color: #ccc;
+            font-style: italic;
+            letter-spacing: 3px;
+            margin-top: 5px;
+        }
+
+        .edition-info {
+            display: flex;
+            justify-content: space-between;
+            color: #999;
+            font-size: 0.75em;
+            padding: 0 10px;
+        }
+
+        .login-section {
+            padding: 40px 60px;
+            background: #fafaf8;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px double #333;
+        }
+
+        .section-header h2 {
+            font-size: 2.5em;
+            color: #2c2c2c;
+            letter-spacing: 1px;
+            font-weight: bold;
+        }
+
+        .section-header p {
+            color: #666;
+            font-style: italic;
+            margin-top: 5px;
+        }
+
+        .login-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+            font-size: 1em;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.85em;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #333;
+            background: #fff;
+            font-family: 'Georgia', serif;
+            font-size: 1em;
+            transition: all 0.3s;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: #666;
+            box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 15px;
+            background: #1a1a1a;
+            color: #f4f1e8;
+            border: 3px solid #000;
+            font-family: 'Georgia', serif;
+            font-size: 1.1em;
+            font-weight: bold;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .decorative-line {
+            height: 2px;
+            background: repeating-linear-gradient(
+                90deg,
+                #333 0px,
+                #333 10px,
+                transparent 10px,
+                transparent 20px
+            );
+            margin: 30px 0;
+        }
+
+        .footer-text {
+            text-align: center;
+            color: #666;
+            font-size: 0.85em;
+            font-style: italic;
+            margin-top: 20px;
+        }
+  /* Make rows side-by-side */
+.form-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+/* Make each column equal width */
+.form-group.half {
+    flex: 1;
+}
+
+/* Optional: ensure inputs stretch properly */
+.form-group.half .form-control {
+    width: 100%;
+}

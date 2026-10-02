@@ -1,0 +1,85 @@
+{% include 'publicheader.html'%}
+<link rel="stylesheet" href="/static/newcss.css">
+
+<div class="newspaper-container">
+
+    <div class="newspaper-header">
+        <div class="masthead">
+            <h1>The Daily Chronicle</h1>
+            <div class="tagline">ALL THE NEWS THAT'S FIT TO PRINT</div>
+        </div>
+        <div class="edition-info">
+            <span>VOL. CXLII... No. 49,234</span>
+            <span>ESTABLISHED 1851</span>
+        </div>
+    </div>
+
+    <div class="login-section">
+        <div class="section-header">
+            <h2>News Agent Registration</h2>
+            <p>Fill in your details to register as a News Agent</p>
+        </div>
+
+        <form method="post" class="login-form">
+
+            <!-- Row 1 -->
+            <div class="form-row">
+                <div class="form-group half">
+                    <label>First Name</label>
+                    <input type="text" class="form-control" name="fname" required>
+                </div>
+
+                <div class="form-group half">
+                    <label>Last Name</label>
+                    <input type="text" class="form-control" name="lname" required>
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="form-row">
+                <div class="form-group half">
+                    <label>Place</label>
+                    <input type="text" class="form-control" name="place" required>
+                </div>
+
+                <div class="form-group half">
+                    <label>Phone</label>
+                    <input type="text" class="form-control" pattern="[0-9]{10}" name="phone" required>
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="form-row">
+                <div class="form-group half">
+                    <label>Email</label>
+                    <input type="email" class="form-control" name="email" required>
+                </div>
+
+                <div class="form-group half">
+                    <label>User Name</label>
+                    <input type="text" class="form-control" name="uname" required>
+                </div>
+            </div>
+
+            <!-- Full-width password -->
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" class="form-control" name="pwd" required>
+            </div>
+
+            <div class="decorative-line"></div>
+
+            <button type="submit" name="agent" class="submit-btn">
+                Register
+            </button>
+
+        </form>
+
+        <p class="quote">
+            “A free press can be good or bad, but without freedom, it can't be anything but bad.”
+        </p>
+    </div>
+
+</div>
+
+{% include 'footer.html'%}

@@ -1,0 +1,75 @@
+{% include 'userheader.html' %}
+<script>
+    function showPopUp(title, details) {
+        // Call an API endpoint to check the news and get the result
+		fetch('/get_malayalam_text', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/x-www-form-urlencoded',  // Update content type
+			},
+			body: new URLSearchParams({
+				'news': title,  // assuming title is the news title
+				'details': details,  // assuming details is the news details
+				'place': place  // assuming place is the news place	
+			}),  
+		})
+        .then(response => response.json())
+        .then(result => {
+            // Display the pop-up message with the result
+            alert(result.message);  // Modify this to use a better-looking pop-up or notification library if needed
+        })
+        .catch(error => {
+            console.error('Error:', error);
+        });
+    }
+</script>
+
+   <!-- banner -->
+	      <section class="banner_main">
+	         <div class="container-fluid">
+	            <div class="row d_flex">
+	               <!-- <div class="col-md-7">
+	                  <div class="text-bg">
+	                     <div class="padding_lert"  style="background: rgb(246, 239, 239);height: 70px">
+	                     </div>
+	                  </div>
+	               </div> -->
+	               <div class="col-md-5 bah">
+	                  <div class="bann_img">   
+						<center>
+							<!-- <figure>
+								<img src="/static/images/bann_img.png" alt="#" style="width: 1080px; height: 400px;">
+							</figure> -->
+						</center>						
+	                  </div>
+	               </div>
+	            </div>
+	         </div>
+	      </section>
+	      <!-- end banner -->
+<br><br><br><br>
+<center>
+<br>
+<table  class="table" style="width: 800px">
+	<h1 style="color:rgb(149, 141, 141);">News</h1>
+	<tr>
+		<th>Title</th>
+		<th>Details</th>
+		<th>place</th>
+		<th>Action</th>
+	</tr>
+	{% for row in data['img'] %} 
+		<tr>
+			<td>{{ row['title'] }}</td>
+			<td>{{ row['details'] }}</td>	
+			<td>{{ row['place'] }}</td>	
+			 <td>
+				<button class="btn btn-primary" onclick="showPopUp('{{ row['title'] }}', '{{ row['details'] }}', '{{ row['place'] }}')">Check</button>
+			<td>
+				<a href="get_malayalam_text?id={{ row['news_id'] }}">check</a>
+			</td>
+		</tr>  
+	{% endfor %}
+</table>
+</center>
+{% include 'footer.html' %}

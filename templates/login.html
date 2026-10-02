@@ -1,0 +1,46 @@
+{% include 'publicheader.html'%}
+   <link rel="stylesheet" href="/static/newcss.css">
+
+    <div class="newspaper-container">
+        <div class="newspaper-header">
+            <div class="masthead">
+                <h1>The Daily Chronicle</h1>
+                <div class="tagline">ALL THE NEWS THAT'S FIT TO PRINT</div>
+            </div>
+            <div class="edition-info">
+                <span>VOL. CXLII... No. 49,234</span>
+                <span>ESTABLISHED 1851</span>
+            </div>
+        </div>
+
+        <div class="login-section">
+            <div class="section-header">
+                <h2>Subscriber Access</h2>
+                <p>Enter your credentials to continue reading</p>
+            </div>
+
+            <form method="post" enctype="multipart/form-data" class="login-form">
+                <div class="form-group">
+                    <label for="uname">User Name</label>
+                    <input type="text" id="uname" name="uname" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="pwd">Password</label>
+                    <input type="password" id="pwd" name="pwd" required>
+                </div>
+
+                <div class="decorative-line"></div>
+
+                <button type="submit" name="login" class="submit-btn">
+                    Login
+                </button>
+
+                <p class="footer-text">
+                    "A free press can be good or bad, but without freedom, it can't be anything but bad."
+                </p>
+            </form>
+        </div>
+    </div>
+
+{% include 'footer.html'%}

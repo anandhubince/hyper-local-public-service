@@ -1,0 +1,91 @@
+{% include 'userheader_home.html' %}
+<link rel="stylesheet" href="/static/reader.css">
+
+<div class="main-content">
+    <div class="newspaper-header">
+        <div class="masthead">
+            <h1 id="newsTitle">THE DAILY CHRONICLE</h1>
+            <div id="tagline" class="tagline">ALL THE NEWS THAT'S FIT TO PRINT</div>
+        </div>
+        <div class="edition-info">
+            <span id="editionDate">WEDNESDAY, DECEMBER 10, 2025</span>
+        </div>
+    </div>
+  <!-- Search Section -->
+            <div class="search-section">
+                <div class="search-header">
+                    <h3><i class="fas fa-search"></i> Search & Filter News</h3>
+                </div>
+
+                <div class="search-main" style="margin-bottom: 20px;">
+                    <input type="text" id="searchInput" placeholder="Search by keywords, title, or content...">
+                    <i class="fas fa-search search-icon"></i>
+                </div>
+
+                <div class="search-grid">
+                    <div class="search-field">
+                        <label for="dateFilter">Filter by Date</label>
+                        <input type="date" id="dateFilter">
+                    </div>
+
+                    <div class="search-field">
+                        <label for="categoryFilter">Filter by Category</label>
+                        <select id="categoryFilter">
+                            <option value="">All Categories</option>
+                        </select>
+                    </div>
+
+                    <div class="search-field">
+                        <label for="agentFilter">Filter by News Agent</label>
+                        <select id="agentFilter">
+                            <option value="">All Agents</option>
+                        </select>
+                    </div>
+
+                    <div class="search-field" style="display: flex; align-items: flex-end;">
+                        <button class="clear-btn" onclick="clearFilters()">
+                            <i class="fas fa-times"></i> Clear Filters
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+   
+
+    <!-- News Grid -->
+    <div class="news-grid" id="newsGrid">
+        {% for row in data['img'] %}
+        <div class="news-card" id="news-{{ row['news_id'] }}"
+             data-title="{{ row['title'] }}"
+             data-details="{{ row['details'] }}"
+             data-category="{{ row['category'] }}"
+             data-date="{{ row['date'] }}"
+             data-agent="{{ row['agent_name'] }}">
+            <h4 class="news-title">{{ row['title'] }}</h4>
+            <p class="news-details">{{ row['details'] }}</p>
+            <div class="news-meta">
+                <span class="category">{{ row['category'] }}</span> |
+                <span class="date">{{ row['date'] }}</span> |
+                <span class="agent">{{ row['agent_name'] }}</span>
+            </div>
+
+            <div class="translate-section">
+                <label>Translate:</label>
+                <select onchange="translateNews({{ row['news_id'] }}, this.value)">
+                    <option value="">Choose Language</option>
+                    <option value="en">English</option>
+                    <option value="ml">Malayalam</option>
+                    <option value="ta">Tamil</option>
+                    <option value="hi">Hindi</option>
+                </select>
+
+                <button class="audio-btn" onclick="readNews({{ row['news_id'] }})">🔊</button>
+                <button class="stop-btn" onclick="stopAudio()">⏹️</button>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+<script src="/static/newsscript.js"></script>
+{% include 'user_footer.html' %}

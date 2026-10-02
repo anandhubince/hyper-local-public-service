@@ -1,0 +1,121 @@
+{% include 'agentheader.html' %}
+<link rel="stylesheet" href="/static/newsagent.css">
+        <!-- Dashboard Content -->
+        <div class="dashboard-content">
+            <div class="page-title">
+                <h2>Agent Control Panel</h2>
+                <p>Manage your news articles and submissions</p>
+            </div>
+
+            <!-- Stats Cards -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-newspaper"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Articles</h3>
+                        <p>156</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-check-circle"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Published</h3>
+                        <p>142</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Pending Review</h3>
+                        <p>8</p>
+                    </div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <div class="stat-info">
+                        <h3>Total Views</h3>
+                        <p>45.2K</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Actions -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>Quick Actions</h2>
+                </div>
+                <div class="quick-actions">
+                    <a href="agentnewsadd" class="action-btn">
+                        <i class="fas fa-plus-circle"></i>
+                        <span>Create New Article</span>
+                    </a>
+                    <a href="#" class="action-btn">
+                        <i class="fas fa-upload"></i>
+                        <span>Upload Media</span>
+                    </a>
+                    <a href="#" class="action-btn">
+                        <i class="fas fa-chart-pie"></i>
+                        <span>View Reports</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Recent Articles -->
+            <div class="section">
+                <div class="section-header">
+                    <h2>Recent Articles</h2>
+                    <a href="agentnewsadd" class="view-all-btn">View All →</a>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-thumbnail"></div>
+                    <div class="news-details">
+                        <h3>Breaking: Major Technology Summit Announced for 2025</h3>
+                        <p>Industry leaders gather to discuss the future of artificial intelligence and sustainable technology innovations across multiple sectors...</p>
+                        <div class="news-meta">
+                            <span><i class="fas fa-calendar"></i> Dec 10, 2025</span>
+                            <span><i class="fas fa-eye"></i> 2,345 views</span>
+                            <span class="badge published">Published</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-thumbnail"></div>
+                    <div class="news-details">
+                        <h3>Local Community Celebrates Annual Heritage Festival</h3>
+                        <p>Thousands attend the vibrant celebration showcasing cultural diversity and traditional performances from various communities...</p>
+                        <div class="news-meta">
+                            <span><i class="fas fa-calendar"></i> Dec 9, 2025</span>
+                            <span><i class="fas fa-eye"></i> 1,823 views</span>
+                            <span class="badge published">Published</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="news-item">
+                    <div class="news-thumbnail"></div>
+                    <div class="news-details">
+                        <h3>New Environmental Policies Set to Transform Urban Planning</h3>
+                        <p>City officials unveil comprehensive sustainability initiatives aimed at reducing carbon footprint and promoting green infrastructure...</p>
+                        <div class="news-meta">
+                            <span><i class="fas fa-calendar"></i> Dec 8, 2025</span>
+                            <span><i class="fas fa-eye"></i> 3,156 views</span>
+                            <span class="badge pending">Pending</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{% include 'agent_footer.html' %}

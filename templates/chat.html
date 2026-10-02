@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>വാർത്താ വായന - വാർത്താ പത്രം</title>
+    <link rel="stylesheet" href="/static/chatpage.css">
+  
+</head>
+<body>
+   <div class="container">
+    <!-- Left Panel - Verification Section -->
+    <div class="verification-panel">
+        <div class="verification-header">
+            <div class="verification-title">നൈപുണ്യ വാർത്ത പരിശോധന</div>
+            <div class="verification-subtitle">Naipunniya College അവതരിപ്പിക്കുന്നു - സത്യാവസ്ഥ അറിയാൻ സഹായിക്കുന്നു</div>
+        </div>
+        <div class="verification-content" id="verification-box">
+            <div class="verification-message assistant">
+                <div class="msg-content">വാർത്തകൾ പരിശോധിക്കാൻ തയ്യാറാണ്. നിങ്ങൾക്ക് സംശയമുള്ള വാർത്ത ഇവിടെ നൽകുക.</div>
+            </div>
+        </div>
+        <div class="verification-input">
+            <textarea id="news-input" placeholder="വാർത്ത ഇവിടെ ടൈപ്പ് ചെയ്യുക..." rows="2"></textarea>
+            <button onclick="verifyNews()">പരിശോധിക്കുക</button>
+        </div>
+    </div>
+    
+    <!-- Right Panel - Newspaper -->
+    <div class="newspaper">
+        <div class="newspaper-header">
+            <div class="masthead">വാർത്താ വായന</div>
+            <div class="tagline">സത്യം മാത്രം വാർത്ത</div>
+            <div class="header-info">
+                <span>കൊച്ചി പതിപ്പ്</span>
+                <span>ബുധനാഴ്ച, 08 ഒക്ടോബർ 2025</span>
+                <span>വില: ₹8</span>
+            </div>
+        </div>
+        
+        <div class="newspaper-content">
+            <div class="breaking">
+                <span class="breaking-label">അടിയന്തിരം</span>
+                സംസ്ഥാനത്ത് കനത്ത മഴയ്ക്ക് സാധ്യത - ഓറഞ്ച് അലർട്ട് പ്രഖ്യാപിച്ചു
+            </div>
+            
+            <div class="main-story">
+                <div class="main-headline">
+                    Naipunniya College: ഫേക്ക് ന്യൂസ് തിരിച്ചറിയാൻ സഹായിക്കുന്ന ആപ്പ്ലിക്കേഷൻ വെബ് പേജിന്റെ ഇടതു ഭാഗത്ത് പ്രദർശിപ്പിക്കുന്നു
+                </div>
+                <div class="main-image">
+                    <!-- ചിത്രം ചേർക്കാം എങ്കിൽ ഇവിടെ ചേർക്കുക -->
+                </div>
+                <div class="main-text">
+                    കേരളം : Naipunniya College ഫേക്ക് ന്യൂസ് തിരിച്ചറിയാൻ സഹായിക്കുന്ന പുതിയ വെബ് അപ്ലിക്കേഷൻ അവതരിപ്പിച്ചു. 
+                    ഈ പ്ലാറ്റ്‌ഫോം ഉപയോക്താക്കളെ വാർത്തകളുടെ വിശ്വാസ്യത പരിശോധിക്കാൻ സഹായിക്കുന്നു. 
+                    വെബ് അപ്ലിക്കേഷൻ പേജിന്റെ ഇടതു ഭാഗത്ത് പ്രദർശിപ്പിക്കപ്പെടുന്നു, 
+                    ശീർഷകങ്ങളും ഉള്ളടക്കവും പരിശോധിച്ച് ഫേക്ക് ന്യൂസ് തിരിച്ചറിയാൻ ഉപകരിക്കുന്നു. 
+                    ഇത് പ്രത്യേകിച്ച് ഫൈനൽ ഇയർ പ്രോജക്റ്റ് ചെയ്യുന്ന വിദ്യാർത്ഥികൾക്ക് അനുയോജ്യമാണ്.
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <div class="story">
+                    <div class="story-image">🏥 ആരോഗ്യ വാർത്ത</div>
+                    <div class="story-headline">
+                        സംസ്ഥാനത്ത് പുതിയ മെഡിക്കൽ കോളേജുകൾ അനുമതി ലഭിച്ചു
+                    </div>
+                    <div class="story-text">
+                        കോഴിക്കോട്: സംസ്ഥാനത്തെ ആരോഗ്യ രംഗത്ത് നിർണായക മുന്നേറ്റം. 
+                        മൂന്ന് പുതിയ സർക്കാർ മെഡിക്കൽ കോളേജുകൾക്ക് അനുമതി ലഭിച്ചു. 
+                        ഇതോടെ കൂടുതൽ വിദ്യാർഥികൾക്ക് മെഡിക്കൽ വിദ്യാഭ്യാസ അവസരം ലഭ്യമാകും.
+                    </div>
+                </div>
+                
+                <div class="story">
+                    <div class="story-image1">🚗 ഗതാഗത വാർത്ത</div>
+                    <div class="story-headline">
+                        കൊച്ചി മെട്രോയുടെ പുതിയ ഘട്ടം ഉടൻ ആരംഭിക്കും
+                    </div>
+                    <div class="story-text">
+                        കൊച്ചി: മെട്രോ റെയിലിന്റെ രണ്ടാം ഘട്ട പണികൾ അന്തിമ ഘട്ടത്തിൽ. 
+                        അടുത്ത മാസം മുതൽ പുതിയ റൂട്ടുകളിൽ സർവീസ് ആരംഭിക്കുമെന്ന് അധികാരികൾ അറിയിച്ചു. 
+                        ഇത് നഗരത്തിലെ ഗതാഗത തിരക്ക് ഗണ്യമായി കുറയ്ക്കും.
+                    </div>
+                </div>
+            </div>
+            
+            <div class="two-column">
+                <div class="story">
+                    <div class="story-headline">
+                        കൃഷി മേഖലയിൽ പുതിയ സാങ്കേതിക വിദ്യകൾ
+                    </div>
+                    <div class="story-text">
+                        തൃശൂർ: കർഷകർക്ക് ആധുനിക കൃഷി സാങ്കേതിക വിദ്യകൾ പരിചയപ്പെടുത്തുന്നതിനായി പ്രത്യേക പരിശീലന പരിപാടി സംഘടിപ്പിക്കും. 
+                        ഡ്രോൺ സാങ്കേതിക വിദ്യയും ജൈവ കൃഷിയും പ്രധാന വിഷയങ്ങളായിരിക്കും.
+                    </div>
+                </div>
+                
+                <div class="story">
+                    <div class="story-headline">
+                        കായിക മേഖലയിൽ കേരളം മികച്ച പ്രകടനം
+                    </div>
+                    <div class="story-text">
+                        കോട്ടയം: ദേശീയ തല മത്സരങ്ങളിൽ കേരള കായിക താരങ്ങൾ മികച്ച പ്രകടനം കാഴ്ചവെക്കുന്നു. 
+                        അത്ലറ്റിക്സ്, സ്വിമ്മിംഗ് എന്നീ വിഭാഗങ്ങളിൽ നിരവധി മെഡലുകൾ നേടി. 
+                        യുവ താരങ്ങളുടെ ഉയർച്ച പ്രോത്സാഹജനകമാണ്.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <script>
+        const verificationBox = document.getElementById('verification-box');
+        const newsInput = document.getElementById('news-input');
+
+        // Function to add message
+        function addMessage(role, text) {
+            const msg = document.createElement('div');
+            msg.classList.add('verification-message', role);
+            msg.innerHTML = `<div class="msg-content">${text}</div>`;
+            verificationBox.appendChild(msg);
+            verificationBox.scrollTop = verificationBox.scrollHeight;
+        }
+
+        // Verify news function
+        async function verifyNews() {
+            const text = newsInput.value.trim();
+            if (!text) return;
+
+            // Clear all previous messages
+            verificationBox.innerHTML = '';
+
+            // Keep initial greeting message (optional)
+            addMessage('assistant', 'വാർത്തകൾ പരിശോധിക്കാൻ തയ്യാറാണ്. നിങ്ങൾക്ക് സംശയമുള്ള വാർത്ത ഇവിടെ നൽകുക.');
+
+            // Add user's message
+            addMessage('user', text);
+            newsInput.value = '';
+
+            // Add checking message
+            addMessage('assistant', 'പരിശോധിക്കുന്നു...');
+
+            try {
+                const response = await fetch('/user/get_response', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ user_input: text })
+                });
+                const data = await response.json();
+
+                // Remove "checking..." message
+                verificationBox.lastChild.remove();
+
+                // Show actual response
+                addMessage('assistant', data.response);
+            } catch (err) {
+                verificationBox.lastChild.remove();
+                addMessage('assistant', `⚠️ പിശക്: ${err.message}`);
+            }
+        }
+
+        // Press Enter to send
+        newsInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                verifyNews();
+            }
+        });
+    </script>
+</body>
+</html>

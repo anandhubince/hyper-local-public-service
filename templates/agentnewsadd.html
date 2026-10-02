@@ -1,0 +1,96 @@
+{% include 'agentheader.html' %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Agent News Management</title>
+    <link rel="stylesheet" href="/static/newsagent.css">
+</head>
+<body>
+
+<div class="news-form-container">
+
+    <form method="post" class="news-form">
+
+        {% if data['upd'] %}
+        <h1 class="form-title">Update News</h1>
+
+        <label>News Title</label>
+        <input type="text" name="title" class="form-control" required
+               value="{{ data['upd'][0]['title'] }}">
+
+        <label>Details</label>
+        <textarea name="details" class="form-control" required rows="5">{{ data['upd'][0]['details'] }}</textarea>
+
+        <a>
+        <label>Category</label>
+        <select name="category" class="form-control" required>
+            {% set categories = ['Sports', 'Politics', 'Business', 'Entertainment','Health','General'] %}
+            {% for cat in categories %}
+                {% if data['upd'][0]['category'] == cat %}
+                    <option value="{{ cat }}" selected>{{ cat }}</option>
+                {% else %}
+                    <option value="{{ cat }}">{{ cat }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+
+        <button type="submit" name="update" class="btn btn-success full-btn">Update</button>
+
+        {% else %}
+        <h1 class="form-title">Add News</h1>
+
+        <label>News Title</label>
+        <input type="text" name="title" class="form-control" required>
+
+        <label>Details</label>
+        <textarea name="details" class="form-control" required rows="5"></textarea>
+
+
+        <label>Category</label>
+        <select name="category" class="form-control" required>
+            {% set categories = ['Sports', 'Politics', 'Business', 'Entertainment','Health','General'] %}
+            {% for cat in categories %}
+                <option value="{{ cat }}">{{ cat }}</option>
+            {% endfor %}
+        </select>
+
+        <button type="submit" name="submit" class="btn btn-success full-btn">Add</button>
+
+        {% endif %}
+    </form>
+
+</div>
+
+<center>
+    <h2>All News</h2>
+    <table class="table news-table">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Details</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data['view'] %}
+            <tr>
+                <td>{{ row['title'] }}</td>
+                <td>{{ row['details'] }}</td>
+                <td>{{ row['category'] }}</td>
+                <td>{{ row['date'] }}</td>
+                <td><a href="?action=update&nid={{ row['news_id'] }}" class="btn btn-outline-info">Update</a></td>
+                <td><a href="?action=delete&nid={{ row['news_id'] }}" class="btn btn-outline-danger">Delete</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</center>
+
+{% include 'agent_footer.html' %}
+
+</body>
+</html>
